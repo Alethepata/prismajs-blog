@@ -23,8 +23,10 @@ const updatePost = (slug, data) => {
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
-const deletePost = () => {
-
+const deletePost = (slug) => {
+    prisma.post.delete({ where: { slug } })
+        .then(data => console.log(`Elinitato: ${data.slug}`))
+    .catch(err => console.log(err));
 }
 
 module.exports = {

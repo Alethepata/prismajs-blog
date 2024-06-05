@@ -13,4 +13,6 @@ const newPost = {
 
 // readPost();
 
-updatePost('cracker-alla-barbabeitola', {content: 'solo dei cracker alla barbabeitola'});
+// updatePost('cracker-alla-barbabeitola', {content: 'solo dei cracker alla barbabeitola'});
+
+deletePost('ciambellone');
