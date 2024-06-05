@@ -11,4 +11,6 @@ const newPost = {
 
 // readPostWithSlug('cracker-alla-barbabeitola');
 
-readPost('cracker-alla-barbabeitola');
+// readPost();
+
+updatePost('cracker-alla-barbabeitola', {content: 'solo dei cracker alla barbabeitola'});

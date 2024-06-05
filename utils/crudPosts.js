@@ -18,8 +18,10 @@ const readPost = () => {
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
-const updatePost = () => {
-
+const updatePost = (slug, data) => {
+    prisma.post.update({ where: { slug }, data })
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 }
 const deletePost = () => {
 
