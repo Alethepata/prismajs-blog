@@ -54,7 +54,17 @@ const updatePost = (slug, data) => {
 
 const deletePost = (slug) => {
     prisma.post.delete({ where: { slug } })
-        .then(data => console.log(`Elinitato: ${data.slug}`))
+    .then(data => console.log(`Elinitato: ${data.slug}`))
+    .catch(err => console.log(err));
+}
+
+const publishedPosts = () => {
+    prisma.post.findMany({
+        where: {
+            published: true
+        }
+    })
+    .then(data => console.log(data))
     .catch(err => console.log(err));
 }
 
@@ -63,5 +73,6 @@ module.exports = {
     readPostWithSlug,
     readPost,
     updatePost,
-    deletePost
+    deletePost,
+    publishedPosts
 }
