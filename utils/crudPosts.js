@@ -6,8 +6,12 @@ const createPost = (data) => {
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
-const readPostWithSlug = () => {
-
+const readPostWithSlug = (slug) => {
+    prisma.post.findUnique({
+        where: { slug }
+    })
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 }
 const readPost = () => {
 

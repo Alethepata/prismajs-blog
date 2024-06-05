@@ -7,4 +7,6 @@ const newPost = {
     "published": true,
 }
 
-createPost(newPost);
+// createPost(newPost);
+
+readPostWithSlug('cracker-alla-barbabeitola');
