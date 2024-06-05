@@ -1,4 +1,4 @@
-const { createPost, readPostWithSlug, readPost, updatePost, deletePost, publishedPosts } = require('./utils/crudPosts');
+const { createPost, readPostWithSlug, readPost, updatePost, deletePost, publishedPosts, search } = require('./utils/crudPosts');
 
 const { createCategory } = require('./utils/crudCategories');
 
@@ -28,4 +28,6 @@ const newPost = {
 
 // createTag();
 
-publishedPosts();
+// publishedPosts();
+
+search('c');
