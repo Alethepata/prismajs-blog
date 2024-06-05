@@ -14,7 +14,9 @@ const readPostWithSlug = (slug) => {
     .catch(err => console.log(err));
 }
 const readPost = () => {
-
+    prisma.post.findMany()
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 }
 const updatePost = () => {
 

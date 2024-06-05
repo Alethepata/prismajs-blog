@@ -9,4 +9,6 @@ const newPost = {
 
 // createPost(newPost);
 
-readPostWithSlug('cracker-alla-barbabeitola');
+// readPostWithSlug('cracker-alla-barbabeitola');
+
+readPost('cracker-alla-barbabeitola');
