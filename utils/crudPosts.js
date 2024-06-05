@@ -6,23 +6,52 @@ const createPost = (data) => {
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
+
 const readPostWithSlug = (slug) => {
     prisma.post.findUnique({
-        where: { slug }
+        where: { slug },
+        include: {
+            category: {
+                select: {
+                    name: true
+                }
+            },
+            tags: {
+                select: {
+                    name: true
+                }
+            }
+        }
     })
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
+
 const readPost = () => {
-    prisma.post.findMany()
+    prisma.post.findMany({
+        include: {
+            category: {
+                select: {
+                    name: true
+                }
+            },
+            tags: {
+                select: {
+                    name: true
+                }
+            }
+        }
+    })
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
+
 const updatePost = (slug, data) => {
     prisma.post.update({ where: { slug }, data })
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
+
 const deletePost = (slug) => {
     prisma.post.delete({ where: { slug } })
         .then(data => console.log(`Elinitato: ${data.slug}`))
