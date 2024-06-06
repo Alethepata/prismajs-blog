@@ -69,9 +69,15 @@ const publishedPosts = () => {
 }
 
 const search = (string) => {
-    const text = `%${string}%`
-    const filteredPost = prisma.$queryRaw`SELECT * FROM post WHERE content LIKE ${text}`;
-    filteredPost.then(data => console.log(data)).catch(err => console.log(err));
+    prisma.post.findMany({
+        where: {
+            content: {
+                contains: string
+            } 
+        }
+    })
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 }
 
 module.exports = {
